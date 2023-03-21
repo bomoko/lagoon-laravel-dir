@@ -14,6 +14,10 @@ tasks:
         command: mkdir -p /app/storage/framework/sessions /app/storage/framework/views /app/storage/framework/cache /app/storage/framework/cache/data
         service: cli
     - run:
+        name: env
+        command: env | sort
+        service: cli
+    - run:
         name: Run migrations
         command: php artisan -n migrate --force
         service: cli
