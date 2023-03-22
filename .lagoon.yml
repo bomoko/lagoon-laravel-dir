@@ -16,7 +16,7 @@ tasks:
         shell: bash
     - run:
         name: env
-        command: env | sort
+        command: echo hi
         service: cli
         shell: bash
     - run:
