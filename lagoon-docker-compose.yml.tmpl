@@ -30,7 +30,7 @@ services:
     build:
       context: ./
       dockerfile: .lagoon/cli.dockerfile
-    image: &cli-image ${COMPOSE_PROJECT_NAME:-{{ ..projectName }}}-cli # this image will be reused as `CLI_IMAGE` in subsequent Docker builds
+    image: &cli-image ${COMPOSE_PROJECT_NAME:-{{ .projectName }}}-cli # this image will be reused as `CLI_IMAGE` in subsequent Docker builds
     labels:
       # Lagoon Labels
       lagoon.type: cli-persistent
@@ -52,7 +52,7 @@ services:
         CLI_IMAGE: *cli-image # Inject the name of the cli image
     labels:
       lagoon.type: nginx-php-persistent
-      lagoon.persistent: /app/storage/ # define where the persistent storage should be mounted too
+      lagoon.persistent: {{ .persistentStorageDirectory }} # define where the persistent storage should be mounted too
     << : *default-volumes # loads the defined volumes from the top
     user: '1000'
     depends_on:
@@ -72,7 +72,7 @@ services:
     labels:
       lagoon.type: nginx-php-persistent
       lagoon.name: nginx # we want this service be part of the nginx pod in Lagoon
-      lagoon.persistent: /app/storage/ # define where the persistent storage should be mounted too
+      lagoon.persistent: {{ .persistentStorageDirectory }} # define where the persistent storage should be mounted too
     << : *default-volumes # loads the defined volumes from the top
     user: '1000'
     depends_on:
