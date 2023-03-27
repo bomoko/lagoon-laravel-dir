@@ -1,2 +1,6 @@
 # set your project's name here
 projectName: default
+
+# use this if you need to change the default persistent storage directory
+# currently set to Laravel default
+persistentStorageDirectory: /app/storage/
