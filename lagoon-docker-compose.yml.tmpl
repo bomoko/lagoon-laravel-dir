@@ -35,7 +35,7 @@ services:
       # Lagoon Labels
       lagoon.type: cli-persistent
       lagoon.persistent.name: nginx # mount the persistent storage of nginx into this container
-      lagoon.persistent: /app/storage/ # location where the persistent storage should be mounted
+      lagoon.persistent: {{ .persistentStorageDirectory }} # location where the persistent storage should be mounted
     #   lando.type: php-cli-drupal
     << : *default-volumes # loads the defined volumes from the top
     user: root
