@@ -6,8 +6,13 @@ questions:
   prompt: What is your project's name
   default: myproject
 - name: persistentStorageDirectory
-  help: The location of your files in the container, default is the laravel default
-  type: text
-  required: true
-  prompt: Where will your persistent storage live
-  default: /app/storage/
+  type: conditional
+  prompt: (advanced) would you like to edit the location of your Persistent storage
+  help: This value is configured to follow Laravel defaults
+  questions:
+  - name: value
+    help: The location of your files in the container, default is the laravel default
+    type: text
+    required: true
+    prompt: Where will your persistent storage live
+    default: /app/storage/
