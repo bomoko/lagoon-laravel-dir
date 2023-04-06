@@ -1,6 +1,12 @@
-# set your project's name here
-projectName: default
-
-# use this if you need to change the default persistent storage directory
-# currently set to Laravel default
-persistentStorageDirectory: /app/storage/
+- name: projectName
+  help: The system name your project will be known by
+  type: text
+  required: true
+  prompt: What is your project's name
+  default: myproject
+- name: persistentStorageDirectory
+  help: The location of your files in the container, default is the laravel default
+  type: text
+  required: true
+  prompt: Where will your persistent storage live
+  default: /app/storage/
