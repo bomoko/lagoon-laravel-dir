@@ -6,6 +6,10 @@ docker-compose-yaml: ./lagoon-docker-compose.yml
 
 project: {{ .projectName }}
 
+project: {{ .projectName }}
+
+dockercomposerversion: {{ ."docker-compose.yml".version }}
+
 
 tasks:
   post-rollout:

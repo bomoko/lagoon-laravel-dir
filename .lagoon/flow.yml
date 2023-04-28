@@ -16,3 +16,6 @@ questions:
     required: true
     prompt: Where will your persistent storage live
     default: /app/storage/
+
+valueFiles:
+  - docker-compose.yml
