@@ -4,5 +4,5 @@ What you might want to do now is examine the .lagoon.yml file to check the defau
 These are standard tasks that are run when your site will be deployed to Lagoon.
 We've included some Laravel cache clearning and running of migrations.
 
-Enjoy Lagooning!
+Enjoy Lagooning!!!
 
